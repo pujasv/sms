@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2018 at 10:07 AM
+-- Generation Time: Dec 31, 2018 at 10:58 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -30,8 +30,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `library` (
   `lab_id` int(11) NOT NULL,
-  `lab_name` varchar(222) NOT NULL
+  `lab_name` varchar(222) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `library`
+--
+
+INSERT INTO `library` (`lab_id`, `lab_name`, `user_id`) VALUES
+(1, 'xyz', 0),
+(2, 'ppp', 0),
+(3, 'xxx', 0);
 
 -- --------------------------------------------------------
 
@@ -41,7 +51,8 @@ CREATE TABLE `library` (
 
 CREATE TABLE `sms_group` (
   `g_id` int(11) NOT NULL,
-  `g_name` varchar(222) NOT NULL
+  `g_name` varchar(222) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -64,8 +75,7 @@ CREATE TABLE `sms_log` (
 --
 
 INSERT INTO `sms_log` (`log_id`, `log_name`, `log_email`, `log_mobile`, `log_pass`, `lstatus`) VALUES
-(1, 'pooja', 'pooja@gmail.com', 9090909090, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 0),
-(4, 'pooja', 'shelkepoojap@gmail.com', 9090909090, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 0);
+(16, 'pooja', 'shelkepoojap@gmail.com', 9890992722, '011c945f30ce2cbafc452f39840f025693339c42', 1);
 
 -- --------------------------------------------------------
 
@@ -134,7 +144,7 @@ ALTER TABLE `sms_per_contact`
 -- AUTO_INCREMENT for table `library`
 --
 ALTER TABLE `library`
-  MODIFY `lab_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `lab_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sms_group`
@@ -146,7 +156,7 @@ ALTER TABLE `sms_group`
 -- AUTO_INCREMENT for table `sms_log`
 --
 ALTER TABLE `sms_log`
-  MODIFY `log_id` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `log_id` int(22) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `sms_msg`
