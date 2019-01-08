@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2018 at 10:58 AM
+-- Generation Time: Jan 08, 2019 at 09:52 AM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -41,7 +41,9 @@ CREATE TABLE `library` (
 INSERT INTO `library` (`lab_id`, `lab_name`, `user_id`) VALUES
 (1, 'xyz', 0),
 (2, 'ppp', 0),
-(3, 'xxx', 0);
+(3, 'xxx', 0),
+(4, 'xyz', 16),
+(5, 'abc', 16);
 
 -- --------------------------------------------------------
 
@@ -54,6 +56,14 @@ CREATE TABLE `sms_group` (
   `g_name` varchar(222) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sms_group`
+--
+
+INSERT INTO `sms_group` (`g_id`, `g_name`, `user_id`) VALUES
+(1, 'pppp', 16),
+(2, 'sssss', 16);
 
 -- --------------------------------------------------------
 
@@ -89,6 +99,14 @@ CREATE TABLE `sms_msg` (
   `msg_lid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `sms_msg`
+--
+
+INSERT INTO `sms_msg` (`msg_id`, `msg_text`, `msg_lid`) VALUES
+(1, 'gfsdhsf ffsh', 4),
+(2, 'gfsdhsf ffsh', 4);
+
 -- --------------------------------------------------------
 
 --
@@ -101,6 +119,14 @@ CREATE TABLE `sms_per_contact` (
   `per_mobile` varchar(222) NOT NULL,
   `per_gid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sms_per_contact`
+--
+
+INSERT INTO `sms_per_contact` (`per_id`, `per_name`, `per_mobile`, `per_gid`) VALUES
+(1, 'pooja', '9900009900', 2),
+(2, 'sachin', '9900009909', 2);
 
 --
 -- Indexes for dumped tables
@@ -144,13 +170,13 @@ ALTER TABLE `sms_per_contact`
 -- AUTO_INCREMENT for table `library`
 --
 ALTER TABLE `library`
-  MODIFY `lab_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `lab_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sms_group`
 --
 ALTER TABLE `sms_group`
-  MODIFY `g_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `g_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sms_log`
@@ -162,13 +188,13 @@ ALTER TABLE `sms_log`
 -- AUTO_INCREMENT for table `sms_msg`
 --
 ALTER TABLE `sms_msg`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sms_per_contact`
 --
 ALTER TABLE `sms_per_contact`
-  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `per_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
